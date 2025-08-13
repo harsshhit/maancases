@@ -8,57 +8,55 @@ const TopProducts = () => {
     {
       id: 1,
       name: 'Minimal Clear Case',
-      price: '$29.99',
-      image: 'https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=600',
-      rating: 4.8,
+      price: '₹2,499',
+      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop',      rating: 4.8,
     },
     {
       id: 2,
       name: 'Matte Black Pro',
-      price: '$34.99',
-      image: 'https://images.pexels.com/photos/4705641/pexels-photo-4705641.jpeg?auto=compress&cs=tinysrgb&w=600',
+      price: '₹2,899',
+      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop',
       rating: 4.9,
     },
     {
       id: 3,
       name: 'Leather Classic',
-      price: '$49.99',
-      image: 'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=600',
+      price: '₹4,149',
+      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop',
       rating: 4.7,
     },
     {
       id: 4,
       name: 'Gradient Wave',
-      price: '$39.99',
-      image: 'https://images.pexels.com/photos/1275229/pexels-photo-1275229.jpeg?auto=compress&cs=tinysrgb&w=600',
-      rating: 4.6,
+      price: '₹3,319',
+      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop',      rating: 4.6,
     },
     {
       id: 5,
       name: 'Minimalist White',
-      price: '$27.99',
-      image: 'https://images.pexels.com/photos/147044/pexels-photo-147044.jpeg?auto=compress&cs=tinysrgb&w=600',
+      price: '₹2,323',
+      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop&sat=30',
       rating: 4.8,
     },
     {
       id: 6,
       name: 'Carbon Fiber',
-      price: '$44.99',
-      image: 'https://images.pexels.com/photos/335334/pexels-photo-335334.jpeg?auto=compress&cs=tinysrgb&w=600',
+      price: '₹3,734',
+      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop',
       rating: 4.5,
     },
     {
       id: 7,
       name: 'Rose Gold Slim',
-      price: '$32.99',
-      image: 'https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=600',
+      price: '₹2,738',
+      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop&sat=90',
       rating: 4.7,
     },
     {
       id: 8,
       name: 'Navy Blue Classic',
-      price: '$29.99',
-      image: 'https://images.pexels.com/photos/163184/earth-globe-world-planet-163184.jpeg?auto=compress&cs=tinysrgb&w=600',
+      price: '₹2,499',
+      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop&sat=70',
       rating: 4.6,
     },
   ];
@@ -96,7 +94,7 @@ const TopProducts = () => {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter grayscale"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-8">
