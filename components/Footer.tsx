@@ -12,10 +12,10 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <ShoppingBag className="h-8 w-8 text-white" />
-              <span className="text-2xl font-bold tracking-tight">MaanCases</span>
+              <span className="text-2xl font-bold tracking-tight">Gudgets Guardians</span>
             </div>
             <p className="text-gray-400 leading-relaxed font-light">
-              Premium minimal phone cases designed to protect your device while complementing your style.
+              Your trusted partner for premium mobile phone cases. Comprehensive protection for all major smartphone brands.
             </p>
             <div className="flex space-x-6 pt-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
@@ -41,7 +41,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="#products" className="text-gray-400 hover:text-white transition-colors duration-300 font-light">
-                  Top Products
+                  Phone Cases
                 </Link>
               </li>
               <li>
@@ -90,7 +90,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3 text-gray-400 font-light">
                 <Mail className="h-4 w-4" />
-                <span>hello@maancases.com</span>
+                <span>hello@gudgetsguardians.com</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-400 font-light">
                 <Phone className="h-4 w-4" />
@@ -107,7 +107,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-16 pt-12 text-center">
           <p className="text-gray-500 font-light">
-            © 2025 MaanCases. All rights reserved. | Privacy Policy | Terms of Service
+            © 2025 Gudgets Guardians. All rights reserved. | Privacy Policy | Terms of Service
           </p>
         </div>
       </div>

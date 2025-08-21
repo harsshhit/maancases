@@ -40,9 +40,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Premium Minimal
+            Gudgets Guardians
             <span className="block text-blue-200">
-              Phone Cases
+              Mobile Phone Cases
             </span>
           </motion.h1>
           
@@ -52,8 +52,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Protect your device with our carefully crafted, minimal phone cases. 
-            <br />Clean designs that complement your lifestyle.
+            Your trusted partner for premium mobile phone cases. 
+            <br />Discover our comprehensive collection for all major smartphone brands.
           </motion.p>
           
           <motion.div

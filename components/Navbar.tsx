@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: 'Home', href: '/' },
-    { name: 'Top Products', href: '#products' },
+    { name: 'Phone Cases', href: '#products' },
     { name: 'All Products', href: '#all-products' },
     { name: 'Categories', href: '#categories' },
     { name: 'Contact', href: '/contact' },
@@ -28,7 +28,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <ShoppingBag className="h-8 w-8 text-black" />
-            <span className="text-2xl font-bold text-black tracking-tight">MaanCases</span>
+            <span className="text-2xl font-bold text-black tracking-tight">Gudgets Guardians</span>
           </Link>
 
           {/* Desktop Menu */}

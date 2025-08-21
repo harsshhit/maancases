@@ -7,56 +7,58 @@ const TopProducts = () => {
   const products = [
     {
       id: 1,
-      name: 'Minimal Clear Case',
-      price: '₹2,499',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop',      rating: 4.8,
-    },
-    {
-      id: 2,
-      name: 'Matte Black Pro',
-      price: '₹2,899',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop',
+      name: 'iPhone 15 Pro Max Guardian',
+      price: '₹3,499',
+      image: 'https://images.unsplash.com/photo-1603314585442-ee3b3c16fbcf?w=600&h=600&fit=crop',
       rating: 4.9,
     },
     {
+      id: 2,
+      name: 'Galaxy S24 Ultra Shield',
+      price: '₹3,299',
+      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop',
+      rating: 4.8,
+    },
+    {
       id: 3,
-      name: 'Leather Classic',
-      price: '₹4,149',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop',
+      name: 'OnePlus 12 Carbon Fiber',
+      price: '₹3,599',
+      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=40',
       rating: 4.7,
     },
     {
       id: 4,
-      name: 'Gradient Wave',
-      price: '₹3,319',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop',      rating: 4.6,
+      name: 'Pixel 8 Pro Leather',
+      price: '₹4,299',
+      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=15',
+      rating: 4.6,
     },
     {
       id: 5,
-      name: 'Minimalist White',
-      price: '₹2,323',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop&sat=30',
+      name: 'iPhone 15 Clear Guardian',
+      price: '₹2,899',
+      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop',
       rating: 4.8,
     },
     {
       id: 6,
-      name: 'Carbon Fiber',
-      price: '₹3,734',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop',
+      name: 'Galaxy Z Fold 5 Protector',
+      price: '₹6,999',
+      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=90',
       rating: 4.5,
     },
     {
       id: 7,
-      name: 'Rose Gold Slim',
-      price: '₹2,738',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop&sat=90',
+      name: 'Nothing Phone 2a Clear',
+      price: '₹2,899',
+      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=50',
       rating: 4.7,
     },
     {
       id: 8,
-      name: 'Navy Blue Classic',
-      price: '₹2,499',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop&sat=70',
+      name: 'Vivo X100 Pro Guardian',
+      price: '₹2,899',
+      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=30',
       rating: 4.6,
     },
   ];
@@ -72,10 +74,10 @@ const TopProducts = () => {
           className="text-center mb-24"
         >
           <h2 className="text-5xl lg:text-6xl font-bold text-black mb-8 tracking-tight">
-            Top Products
+            Featured Mobile Phone Cases
           </h2>
           <p className="text-xl text-gray-500 max-w-3xl mx-auto font-light leading-relaxed">
-            Discover our most popular phone cases, loved by customers worldwide
+            Discover our most popular mobile phone cases, trusted by customers worldwide
           </p>
         </motion.div>
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Smartphone, Tablet, Palette, Shield } from 'lucide-react';
+import { Smartphone, Shield } from 'lucide-react';
 
 const Categories = () => {
   const categories = [
@@ -17,17 +17,17 @@ const Categories = () => {
       id: 2,
       name: 'Samsung Cases',
       description: 'Stylish protection for Galaxy series',
-      icon: Tablet,
+      icon: Smartphone,
       color: 'from-gray-700 to-gray-800',
       count: '120+ Products',
     },
     {
       id: 3,
-      name: 'Custom Designs',
-      description: 'Personalized cases with your style',
-      icon: Palette,
+      name: 'Android Cases',
+      description: 'Cases for OnePlus, Google, and more',
+      icon: Smartphone,
       color: 'from-gray-600 to-gray-700',
-      count: '200+ Designs',
+      count: '200+ Products',
     },
     {
       id: 4,
@@ -50,10 +50,10 @@ const Categories = () => {
           className="text-center mb-24"
         >
           <h2 className="text-5xl lg:text-6xl font-bold text-black mb-8 tracking-tight">
-            Shop by Category
+            Mobile Phone Case Categories
           </h2>
           <p className="text-xl text-gray-500 max-w-3xl mx-auto font-light leading-relaxed">
-            Find the perfect case for your device and style
+            Find the perfect mobile phone case for your device and lifestyle
           </p>
         </motion.div>
 

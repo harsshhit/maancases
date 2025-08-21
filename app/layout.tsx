@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'MaanCases - Premium Minimal Phone Cases',
-  description: 'Protect your device with our carefully crafted, minimal phone cases. Clean designs that complement your lifestyle.',
+  title: 'Gudgets Guardians - Premium Mobile Phone Cases',
+  description: 'Your trusted partner for premium mobile phone cases. Discover our comprehensive collection of protective cases for all major smartphone brands.',
 };
 
 export default function RootLayout({

@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
+
 const AllProducts = () => {
   const [selectedBrand, setSelectedBrand] = useState('All');
 
@@ -34,52 +35,150 @@ const AllProducts = () => {
    
     {
       id: 1,
-      name: 'iPhone 15 Pro Max Clear Case',
+      name: 'iPhone 17 Pro Max Clear Case',
       brand: 'Apple',
       price: '₹3,499',
-      image: 'https://images.unsplash.com/photo-1603314585442-ee3b3c16fbcf?w=600&h=600&fit=crop',
+      image: '/images/apple1.jpg',
       rating: 4.9,
-      model: 'iPhone 15 Pro Max'
+      model: 'iPhone 17 Pro Max'
     },
     {
       id: 2,
-      name: 'iPhone 15 Pro Leather Case',
+      name: 'iPhone 14,15 Pro Max Clear Case',
       brand: 'Apple',
-      price: '₹4,899',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop',
-      rating: 4.8,
-      model: 'iPhone 15 Pro'
+      price: '₹2,499',
+      image: '/images/apple2.jpg',
+      rating: 4.9,
+      model: 'iPhone 14,15 Pro Max Clear Case'
     },
     {
       id: 3,
-      name: 'iPhone 15 Silicone Case',
+      name: 'iPhone 14,15 Pro Max Clear Case',
       brand: 'Apple',
-      price: '₹3,299',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop&sat=30',
-      rating: 4.7,
-      model: 'iPhone 15'
+      price: '₹3,099',
+      image: '/images/apple3.jpg',
+      rating: 4.9,
+      model: 'iPhone 14,15 Pro Max Clear Case'
     },
     {
       id: 4,
-      name: 'iPhone 14 Pro Max Carbon Fiber',
+      name: 'iPhone 14,15 Pro Max Clear Case',
       brand: 'Apple',
       price: '₹5,299',
-      image: 'https://images.unsplash.com/photo-1603314585442-ee3b3c16fbcf?w=600&h=600&fit=crop&sat=20',
+      image: '/images/apple4.jpg',
       rating: 4.9,
-      model: 'iPhone 14 Pro Max'
+      model: 'iPhone 14,15 Pro Max Clear Case'
     },
     {
       id: 5,
-      name: 'iPhone 13 Mini Matte Black',
+      name: 'iPhone 14,15 Pro Max Clear Case',
       brand: 'Apple',
       price: '₹2,899',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop&sat=70',
-      rating: 4.6,
-      model: 'iPhone 13 Mini'
+      image: '/images/apple5.jpg',
+      rating: 4.9,
+      model: 'iPhone 14,15 Pro Max Clear Case'
     },
 
     {
-      id: 6,
+    id: 6,
+      name: 'iPhone 14,15,16 Pro ',
+      brand: 'Apple',
+      price: '₹3,099',
+      image: '/images/apple6.jpg',
+      rating: 4.7,
+      model: 'iPhone 14,15,16 Pro '
+    },
+
+    {
+      id: 7,
+        name: 'iPhone 14,15,16 Pro ',
+        brand: 'Apple',
+        price: '₹3,499',
+        image: '/images/apple7.jpg',
+        rating: 4.9,
+        model: 'iPhone 14,15,16 Pro '
+      },
+
+      {
+        id: 8,
+          name: 'iPhone 14,15,16 Pro ',
+          brand: 'Apple',
+          price: '₹3,099',
+          image: '/images/apple8.jpg',
+          rating: 4.8,
+          model: 'iPhone 14,15,16 Pro '
+        },
+
+        {
+          id: 9,
+            name: 'iPhone 14,15,16 Pro ',
+            brand: 'Apple',
+            price: '₹3,299',
+            image: '/images/apple9.jpg',
+            rating: 4.7,
+            model: 'iPhone 14,15,16 Pro '
+          },
+
+          {
+            id: 10,
+              name: 'iPhone 14,15,16 Pro ',
+              brand: 'Apple',
+              price: '₹3,499',
+              image: '/images/apple10.jpg',
+              rating: 4.9,
+              model: 'iPhone 14,15,16 Pro '
+            },
+  
+
+    {
+      id: 11,
+      name: 'samsung flip 4,5',
+      brand: 'Samsung',
+      price: '₹3,299',
+      image: '/images/samsung1.jpg',
+      rating: 4.7,
+      model: 'samsung flip 4,5'
+    },
+    {
+      id: 12,
+      name: 'samsung flip 4,5',
+      brand: 'Samsung',
+      price: '₹3,099',
+      image: '/images/samsung2.jpg',
+      rating: 4.8,
+      model: 'samsung flip 4,5'
+    },
+    {
+      id: 13,
+      name: 'samsung flip 4,5',
+      brand: 'Samsung',
+      price: '₹2,599',
+      image: '/images/samsung3.jpg',
+      rating: 4.9,
+      model: 'samsung flip 4,5'
+    },
+    {
+      id: 14,
+      name: 'samsung flip 4,5',
+      brand: 'Samsung',
+      price: '₹3,299',
+      image: '/images/samsung4.jpg',
+      rating: 4.8,
+      model: 'samsung flip 4,5'
+    },
+    {
+      id: 15,
+      name: 'samsung flip 4,5',
+      brand: 'Samsung',
+      price: '₹3,499',
+      image: '/images/samsung5.jpg',
+      rating: 4.7,
+      model: 'samsung flip 4,5'
+    },
+
+
+    {
+      id: 16,
       name: 'Galaxy S24 Ultra Clear Case',
       brand: 'Samsung',
       price: '₹3,299',
@@ -88,7 +187,7 @@ const AllProducts = () => {
       model: 'Galaxy S24 Ultra'
     },
     {
-      id: 7,
+      id: 17,
       name: 'Galaxy S24+ Leather Case',
       brand: 'Samsung',
       price: '₹4,199',
@@ -97,7 +196,7 @@ const AllProducts = () => {
       model: 'Galaxy S24+'
     },
     {
-      id: 8,
+      id: 18,
       name: 'Galaxy Z Fold 5 Protective Case',
       brand: 'Samsung',
       price: '₹6,999',
@@ -106,7 +205,7 @@ const AllProducts = () => {
       model: 'Galaxy Z Fold 5'
     },
     {
-      id: 9,
+      id: 19,
       name: 'Galaxy Z Flip 5 Slim Case',
       brand: 'Samsung',
       price: '₹4,899',
@@ -115,7 +214,7 @@ const AllProducts = () => {
       model: 'Galaxy Z Flip 5'
     },
     {
-      id: 10,
+      id: 20,
       name: 'Galaxy A55 Rugged Case',
       brand: 'Samsung',
       price: '₹2,499',
@@ -126,7 +225,7 @@ const AllProducts = () => {
 
 
     {
-      id: 11,
+      id: 21,
       name: 'Vivo X100 Pro Clear Case',
       brand: 'Vivo',
       price: '₹2,899',
@@ -135,7 +234,7 @@ const AllProducts = () => {
       model: 'Vivo X100 Pro'
     },
     {
-      id: 12,
+      id: 22,
       name: 'Vivo V29 Pro Leather Case',
       brand: 'Vivo',
       price: '₹3,499',
@@ -144,7 +243,7 @@ const AllProducts = () => {
       model: 'Vivo V29 Pro'
     },
     {
-      id: 13,
+      id: 23,
       name: 'Vivo Y100 Carbon Fiber',
       brand: 'Vivo',
       price: '₹1,999',
@@ -155,7 +254,7 @@ const AllProducts = () => {
 
    
     {
-      id: 14,
+      id: 24,
       name: 'Oppo Find X7 Ultra Clear Case',
       brand: 'Oppo',
       price: '₹3,199',
@@ -164,7 +263,7 @@ const AllProducts = () => {
       model: 'Oppo Find X7 Ultra'
     },
     {
-      id: 15,
+      id: 25,
       name: 'Oppo Reno 11 Pro Silicone',
       brand: 'Oppo',
       price: '₹2,799',
@@ -173,7 +272,7 @@ const AllProducts = () => {
       model: 'Oppo Reno 11 Pro'
     },
     {
-      id: 16,
+      id: 26,
       name: 'Oppo A98 Rugged Case',
       brand: 'Oppo',
       price: '₹1,899',
@@ -184,7 +283,7 @@ const AllProducts = () => {
 
    
     {
-      id: 17,
+      id: 27,
       name: 'Xiaomi 14 Ultra Premium Case',
       brand: 'Mi',
       price: '₹3,899',
@@ -193,7 +292,7 @@ const AllProducts = () => {
       model: 'Xiaomi 14 Ultra'
     },
     {
-      id: 18,
+      id: 28,
       name: 'Redmi Note 13 Pro+ Clear',
       brand: 'Mi',
       price: '₹2,299',
@@ -202,7 +301,7 @@ const AllProducts = () => {
       model: 'Redmi Note 13 Pro+'
     },
     {
-      id: 19,
+      id: 29,
       name: 'POCO X6 Pro Matte Black',
       brand: 'Mi',
       price: '₹1,999',
@@ -213,7 +312,7 @@ const AllProducts = () => {
 
   
     {
-      id: 20,
+      id: 30,
       name: 'OnePlus 12 Carbon Fiber',
       brand: 'OnePlus',
       price: '₹3,599',
@@ -222,7 +321,7 @@ const AllProducts = () => {
       model: 'OnePlus 12'
     },
     {
-      id: 21,
+      id: 31,
       name: 'OnePlus 12R Clear Case',
       brand: 'OnePlus',
       price: '₹2,899',
@@ -231,7 +330,7 @@ const AllProducts = () => {
       model: 'OnePlus 12R'
     },
     {
-      id: 22,
+      id: 32,
       name: 'OnePlus Nord CE 4 Leather',
       brand: 'OnePlus',
       price: '₹2,199',
@@ -242,7 +341,7 @@ const AllProducts = () => {
 
   
     {
-      id: 23,
+      id: 33,
       name: 'Realme GT Neo 5 SE Clear',
       brand: 'Realme',
       price: '₹2,199',
@@ -250,8 +349,9 @@ const AllProducts = () => {
       rating: 4.6,
       model: 'Realme GT Neo 5 SE'
     },
+
     {
-      id: 24,
+      id: 34,
       name: 'Realme 12 Pro+ Silicone',
       brand: 'Realme',
       price: '₹2,499',
@@ -262,7 +362,7 @@ const AllProducts = () => {
 
 
     {
-      id: 25,
+      id: 35,
       name: 'Nothing Phone 2a Clear',
       brand: 'Nothing',
       price: '₹2,899',
@@ -271,7 +371,7 @@ const AllProducts = () => {
       model: 'Nothing Phone 2a'
     },
     {
-      id: 26,
+      id: 36,
       name: 'Nothing Phone 1 Carbon',
       brand: 'Nothing',
       price: '₹3,199',
@@ -282,7 +382,7 @@ const AllProducts = () => {
 
 
     {
-      id: 27,
+      id: 37,
       name: 'Pixel 8 Pro Leather Case',
       brand: 'Google',
       price: '₹4,299',
@@ -291,7 +391,7 @@ const AllProducts = () => {
       model: 'Pixel 8 Pro'
     },
     {
-      id: 28,
+      id: 38,
       name: 'Pixel 8 Clear Case',
       brand: 'Google',
       price: '₹3,299',
@@ -300,7 +400,7 @@ const AllProducts = () => {
       model: 'Pixel 8'
     },
     {
-      id: 29,
+      id: 39,
       name: 'Pixel 7a Rugged Case',
       brand: 'Google',
       price: '₹2,499',
@@ -311,7 +411,7 @@ const AllProducts = () => {
 
 
     {
-      id: 30,
+      id: 40,
       name: 'Huawei P60 Pro Premium',
       brand: 'Huawei',
       price: '₹4,899',
@@ -319,8 +419,9 @@ const AllProducts = () => {
       rating: 4.8,
       model: 'Huawei P60 Pro'
     },
+
     {
-      id: 31,
+      id: 41,
       name: 'Huawei Nova 11 SE Clear',
       brand: 'Huawei',
       price: '₹2,199',
@@ -331,7 +432,7 @@ const AllProducts = () => {
 
    
     {
-      id: 32,
+      id: 42,
       name: 'Motorola Edge 40 Pro',
       brand: 'Motorola',
       price: '₹3,199',
@@ -340,7 +441,7 @@ const AllProducts = () => {
       model: 'Motorola Edge 40 Pro'
     },
     {
-      id: 33,
+      id: 43,
       name: 'Moto G84 Clear Case',
       brand: 'Motorola',
       price: '₹1,899',
@@ -365,10 +466,10 @@ const AllProducts = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl lg:text-6xl font-bold text-black mb-8 tracking-tight">
-            All Products
+            All Mobile Phone Cases
           </h2>
           <p className="text-xl text-gray-500 max-w-3xl mx-auto font-light leading-relaxed mb-12">
-            Explore our complete collection of premium phone cases for all major brands
+            Explore our complete collection of premium mobile phone cases for all major brands
           </p>
 
           {/* Filter Section */}
@@ -397,12 +498,12 @@ const AllProducts = () => {
           </div>
 
           {/* Results Count */}
-          <div className="text-center mb-12">
-            <p className="text-lg text-gray-600">
-              Showing {filteredProducts.length} products
-              {selectedBrand !== 'All' && ` for ${selectedBrand}`}
-            </p>
-          </div>
+                      <div className="text-center mb-12">
+              <p className="text-lg text-gray-600">
+                Showing {filteredProducts.length} mobile phone cases
+                {selectedBrand !== 'All' && ` for ${selectedBrand}`}
+              </p>
+            </div>
         </motion.div>
 
         {/* Products Grid */}
@@ -468,7 +569,7 @@ const AllProducts = () => {
             className="text-center py-16"
           >
             <p className="text-xl text-gray-500">
-              No products found for {selectedBrand}. Please try another brand.
+              No mobile phone cases found for {selectedBrand}. Please try another brand.
             </p>
           </motion.div>
         )}
@@ -478,3 +579,4 @@ const AllProducts = () => {
 };
 
 export default AllProducts;
+
