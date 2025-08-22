@@ -2,14 +2,8 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Star, Filter, ChevronDown } from 'lucide-react';
+import { Star, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 
 
 const AllProducts = () => {
@@ -300,155 +294,8 @@ const AllProducts = () => {
       rating: 4.5,
       model: 'Redmi Note 13 Pro+'
     },
-    {
-      id: 29,
-      name: 'POCO X6 Pro Matte Black',
-      brand: 'Mi',
-      price: '₹1,999',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop',
-      rating: 4.4,
-      model: 'POCO X6 Pro'
-    },
 
   
-    {
-      id: 30,
-      name: 'OnePlus 12 Carbon Fiber',
-      brand: 'OnePlus',
-      price: '₹3,599',
-      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=40',
-      rating: 4.9,
-      model: 'OnePlus 12'
-    },
-    {
-      id: 31,
-      name: 'OnePlus 12R Clear Case',
-      brand: 'OnePlus',
-      price: '₹2,899',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop',
-      rating: 4.7,
-      model: 'OnePlus 12R'
-    },
-    {
-      id: 32,
-      name: 'OnePlus Nord CE 4 Leather',
-      brand: 'OnePlus',
-      price: '₹2,199',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop&sat=70',
-      rating: 4.5,
-      model: 'OnePlus Nord CE 4'
-    },
-
-  
-    {
-      id: 33,
-      name: 'Realme GT Neo 5 SE Clear',
-      brand: 'Realme',
-      price: '₹2,199',
-      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=60',
-      rating: 4.6,
-      model: 'Realme GT Neo 5 SE'
-    },
-
-    {
-      id: 34,
-      name: 'Realme 12 Pro+ Silicone',
-      brand: 'Realme',
-      price: '₹2,499',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop&sat=90',
-      rating: 4.5,
-      model: 'Realme 12 Pro+'
-    },
-
-
-    {
-      id: 35,
-      name: 'Nothing Phone 2a Clear',
-      brand: 'Nothing',
-      price: '₹2,899',
-      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=50',
-      rating: 4.8,
-      model: 'Nothing Phone 2a'
-    },
-    {
-      id: 36,
-      name: 'Nothing Phone 1 Carbon',
-      brand: 'Nothing',
-      price: '₹3,199',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop',
-      rating: 4.7,
-      model: 'Nothing Phone 1'
-    },
-
-
-    {
-      id: 37,
-      name: 'Pixel 8 Pro Leather Case',
-      brand: 'Google',
-      price: '₹4,299',
-      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=15',
-      rating: 4.9,
-      model: 'Pixel 8 Pro'
-    },
-    {
-      id: 38,
-      name: 'Pixel 8 Clear Case',
-      brand: 'Google',
-      price: '₹3,299',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop&sat=40',
-      rating: 4.8,
-      model: 'Pixel 8'
-    },
-    {
-      id: 39,
-      name: 'Pixel 7a Rugged Case',
-      brand: 'Google',
-      price: '₹2,499',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop',
-      rating: 4.6,
-      model: 'Pixel 7a'
-    },
-
-
-    {
-      id: 40,
-      name: 'Huawei P60 Pro Premium',
-      brand: 'Huawei',
-      price: '₹4,899',
-      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=25',
-      rating: 4.8,
-      model: 'Huawei P60 Pro'
-    },
-
-    {
-      id: 41,
-      name: 'Huawei Nova 11 SE Clear',
-      brand: 'Huawei',
-      price: '₹2,199',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop&sat=60',
-      rating: 4.5,
-      model: 'Huawei Nova 11 SE'
-    },
-
-   
-    {
-      id: 42,
-      name: 'Motorola Edge 40 Pro',
-      brand: 'Motorola',
-      price: '₹3,199',
-      image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&sat=35',
-      rating: 4.6,
-      model: 'Motorola Edge 40 Pro'
-    },
-    {
-      id: 43,
-      name: 'Moto G84 Clear Case',
-      brand: 'Motorola',
-      price: '₹1,899',
-      image: 'https://images.unsplash.com/photo-1601599561213-832382fd07ba?w=600&h=600&fit=crop',
-      rating: 4.4,
-      model: 'Moto G84'
-    }
   ];
 
   const filteredProducts = selectedBrand === 'All' 
@@ -473,37 +320,43 @@ const AllProducts = () => {
           </p>
 
           {/* Filter Section */}
-          <div className="flex justify-center items-center gap-4 mb-16">
-            <Filter className="h-5 w-5 text-gray-600" />
-            <span className="text-lg font-medium text-gray-700">Filter by Brand:</span>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="min-w-[200px] justify-between">
-                  {selectedBrand}
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="max-h-96 overflow-y-auto">
-                {brands.map((brand) => (
-                  <DropdownMenuItem
-                    key={brand}
+          <div className="mb-16">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <Filter className="h-5 w-5 text-gray-600" />
+              <span className="text-lg font-medium text-gray-700">Filter by Brand:</span>
+            </div>
+            
+            {/* Brand Filter Buttons */}
+            <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+              {brands.map((brand) => (
+                <motion.div
+                  key={brand}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button
+                    variant={selectedBrand === brand ? "default" : "outline"}
                     onClick={() => setSelectedBrand(brand)}
-                    className="cursor-pointer"
+                    className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                      selectedBrand === brand
+                        ? 'bg-black text-white hover:bg-gray-800 shadow-lg'
+                        : 'bg-white text-gray-700 hover:bg-gray-50 border-gray-300 hover:border-gray-400'
+                    }`}
                   >
                     {brand}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+                  </Button>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           {/* Results Count */}
-                      <div className="text-center mb-12">
-              <p className="text-lg text-gray-600">
-                Showing {filteredProducts.length} mobile phone cases
-                {selectedBrand !== 'All' && ` for ${selectedBrand}`}
-              </p>
-            </div>
+          <div className="text-center mb-12">
+            <p className="text-lg text-gray-600">
+              Showing {filteredProducts.length} mobile phone cases
+              {selectedBrand !== 'All' && ` for ${selectedBrand}`}
+            </p>
+          </div>
         </motion.div>
 
         {/* Products Grid */}
