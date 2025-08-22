@@ -1,13 +1,28 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Star, Filter } from 'lucide-react';
+import { Star, Filter, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+// Type definitions
+interface Product {
+  id: number;
+  name: string;
+  brand: string;
+  price: string;
+  rating: number;
+  model: string;
+  image?: string;
+  images?: string[];
+}
 
 const AllProducts = () => {
   const [selectedBrand, setSelectedBrand] = useState('All');
+  const [currentPage, setCurrentPage] = useState(0);
+  const [currentSlide2, setCurrentSlide2] = useState(0);
+  const [currentSlide6, setCurrentSlide6] = useState(0);
+  const [currentSlide11, setCurrentSlide11] = useState(0);
 
   const brands = [
     'All',
@@ -25,7 +40,7 @@ const AllProducts = () => {
     'Motorola'
   ];
 
-  const products = [
+  const products: Product[] = [
    
     {
       id: 1,
@@ -41,34 +56,7 @@ const AllProducts = () => {
       name: 'iPhone 14,15 Pro Max Clear Case',
       brand: 'Apple',
       price: '₹2,499',
-      image: '/images/apple2.jpg',
-      rating: 4.9,
-      model: 'iPhone 14,15 Pro Max Clear Case'
-    },
-    {
-      id: 3,
-      name: 'iPhone 14,15 Pro Max Clear Case',
-      brand: 'Apple',
-      price: '₹3,099',
-      image: '/images/apple3.jpg',
-      rating: 4.9,
-      model: 'iPhone 14,15 Pro Max Clear Case'
-    },
-    {
-      id: 4,
-      name: 'iPhone 14,15 Pro Max Clear Case',
-      brand: 'Apple',
-      price: '₹5,299',
-      image: '/images/apple4.jpg',
-      rating: 4.9,
-      model: 'iPhone 14,15 Pro Max Clear Case'
-    },
-    {
-      id: 5,
-      name: 'iPhone 14,15 Pro Max Clear Case',
-      brand: 'Apple',
-      price: '₹2,899',
-      image: '/images/apple5.jpg',
+      images: ['/images/apple2.jpg', '/images/apple3.jpg', '/images/apple4.jpg', '/images/apple5.jpg'],
       rating: 4.9,
       model: 'iPhone 14,15 Pro Max Clear Case'
     },
@@ -78,94 +66,17 @@ const AllProducts = () => {
       name: 'iPhone 14,15,16 Pro ',
       brand: 'Apple',
       price: '₹3,099',
-      image: '/images/apple6.jpg',
+      images: ['/images/apple6.jpg', '/images/apple7.jpg', '/images/apple8.jpg', '/images/apple9.jpg', '/images/apple10.jpg'],
       rating: 4.7,
       model: 'iPhone 14,15,16 Pro '
     },
-
-    {
-      id: 7,
-        name: 'iPhone 14,15,16 Pro ',
-        brand: 'Apple',
-        price: '₹3,499',
-        image: '/images/apple7.jpg',
-        rating: 4.9,
-        model: 'iPhone 14,15,16 Pro '
-      },
-
-      {
-        id: 8,
-          name: 'iPhone 14,15,16 Pro ',
-          brand: 'Apple',
-          price: '₹3,099',
-          image: '/images/apple8.jpg',
-          rating: 4.8,
-          model: 'iPhone 14,15,16 Pro '
-        },
-
-        {
-          id: 9,
-            name: 'iPhone 14,15,16 Pro ',
-            brand: 'Apple',
-            price: '₹3,299',
-            image: '/images/apple9.jpg',
-            rating: 4.7,
-            model: 'iPhone 14,15,16 Pro '
-          },
-
-          {
-            id: 10,
-              name: 'iPhone 14,15,16 Pro ',
-              brand: 'Apple',
-              price: '₹3,499',
-              image: '/images/apple10.jpg',
-              rating: 4.9,
-              model: 'iPhone 14,15,16 Pro '
-            },
-  
 
     {
       id: 11,
       name: 'samsung flip 4,5',
       brand: 'Samsung',
       price: '₹3,299',
-      image: '/images/samsung1.jpg',
-      rating: 4.7,
-      model: 'samsung flip 4,5'
-    },
-    {
-      id: 12,
-      name: 'samsung flip 4,5',
-      brand: 'Samsung',
-      price: '₹3,099',
-      image: '/images/samsung2.jpg',
-      rating: 4.8,
-      model: 'samsung flip 4,5'
-    },
-    {
-      id: 13,
-      name: 'samsung flip 4,5',
-      brand: 'Samsung',
-      price: '₹2,599',
-      image: '/images/samsung3.jpg',
-      rating: 4.9,
-      model: 'samsung flip 4,5'
-    },
-    {
-      id: 14,
-      name: 'samsung flip 4,5',
-      brand: 'Samsung',
-      price: '₹3,299',
-      image: '/images/samsung4.jpg',
-      rating: 4.8,
-      model: 'samsung flip 4,5'
-    },
-    {
-      id: 15,
-      name: 'samsung flip 4,5',
-      brand: 'Samsung',
-      price: '₹3,499',
-      image: '/images/samsung5.jpg',
+      images: ['/images/samsung1.jpg', '/images/samsung2.jpg', '/images/samsung3.jpg', '/images/samsung4.jpg', '/images/samsung5.jpg'],
       rating: 4.7,
       model: 'samsung flip 4,5'
     },
@@ -302,6 +213,123 @@ const AllProducts = () => {
     ? products 
     : products.filter(product => product.brand === selectedBrand);
 
+  // Calculate pagination
+  const productsPerPage = 4;
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+  const startIndex = currentPage * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const currentProducts = filteredProducts.slice(startIndex, endIndex);
+
+  const nextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  // Reset to first page when brand changes
+  const handleBrandChange = (brand: string) => {
+    setSelectedBrand(brand);
+    setCurrentPage(0);
+  };
+
+  // Auto slideshow for product ID 2
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide2((prev) => {
+        const next = (prev + 1) % 4;
+        console.log('Auto slideshow changing to slide:', next);
+        return next;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide2((prev) => {
+      const next = (prev + 1) % 4;
+      console.log('Manual next slide:', next);
+      return next;
+    });
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide2((prev) => {
+      const next = (prev - 1 + 4) % 4;
+      console.log('Manual prev slide:', next);
+      return next;
+    });
+  };
+
+  // Auto slideshow for product ID 6
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide6((prev) => {
+        const next = (prev + 1) % 5;
+        console.log('Auto slideshow changing to slide:', next);
+        return next;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide6 = () => {
+    setCurrentSlide6((prev) => {
+      const next = (prev + 1) % 5;
+      console.log('Manual next slide:', next);
+      return next;
+    });
+  };
+
+  const prevSlide6 = () => {
+    setCurrentSlide6((prev) => {
+      const next = (prev - 1 + 5) % 5;
+      console.log('Manual prev slide:', next);
+      return next;
+    });
+  };
+
+  // Auto slideshow for product ID 11
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide11((prev) => {
+        const next = (prev + 1) % 5;
+        console.log('Auto slideshow changing to slide:', next);
+        return next;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide11 = () => {
+    setCurrentSlide11((prev) => {
+      const next = (prev + 1) % 5;
+      console.log('Manual next slide:', next);
+      return next;
+    });
+  };
+
+  const prevSlide11 = () => {
+    setCurrentSlide11((prev) => {
+      const next = (prev - 1 + 5) % 5;
+      console.log('Manual prev slide:', next);
+      return next;
+    });
+  };
+
+  // Check if product ID 2 is in current products
+  const hasSlideshowProduct = currentProducts.some(product => product.id === 2);
+  const hasSlideshowProduct6 = currentProducts.some(product => product.id === 6);
+  const hasSlideshowProduct11 = currentProducts.some(product => product.id === 11);
+  console.log('Current products:', currentProducts.map(p => p.id));
+  console.log('Has slideshow product 2:', hasSlideshowProduct);
+  console.log('Has slideshow product 6:', hasSlideshowProduct6);
+  console.log('Has slideshow product 11:', hasSlideshowProduct11);
+
   return (
     <section id="all-products" className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -336,7 +364,7 @@ const AllProducts = () => {
                 >
                   <Button
                     variant={selectedBrand === brand ? "default" : "outline"}
-                    onClick={() => setSelectedBrand(brand)}
+                    onClick={() => handleBrandChange(brand)}
                     className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                       selectedBrand === brand
                         ? 'bg-black text-white hover:bg-gray-800 shadow-lg'
@@ -356,62 +384,278 @@ const AllProducts = () => {
               Showing {filteredProducts.length} mobile phone cases
               {selectedBrand !== 'All' && ` for ${selectedBrand}`}
             </p>
+            {/* Debug info */}
+            <p className="text-sm text-gray-400 mt-2">
+              Slide 2: {currentSlide2} | Slide 6: {currentSlide6} | Slide 11: {currentSlide11} | Has slideshow 2: {hasSlideshowProduct ? 'Yes' : 'No'} | Has slideshow 6: {hasSlideshowProduct6 ? 'Yes' : 'No'} | Has slideshow 11: {hasSlideshowProduct11 ? 'Yes' : 'No'}
+            </p>
           </div>
         </motion.div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {filteredProducts.map((product, index) => (
-            <motion.div
-              key={product.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.05 }}
-              viewport={{ once: true }}
-              className="group cursor-pointer"
-            >
-              <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:scale-105 border border-gray-100">
-                <div className="aspect-square overflow-hidden bg-gray-50">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
-                      {product.brand}
-                    </span>
-                    <span className="text-xs text-gray-500">
-                      {product.model}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-black mb-3 tracking-tight line-clamp-2">
-                    {product.name}
-                  </h3>
-                  <div className="flex items-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`h-4 w-4 ${
-                          i < Math.floor(product.rating)
-                            ? 'text-yellow-400 fill-current'
-                            : 'text-gray-300'
-                        }`}
+        {/* Products Grid with Carousel */}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          {totalPages > 1 && (
+            <>
+              <Button
+                onClick={prevPage}
+                variant="outline"
+                size="icon"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg border-gray-300"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </Button>
+              <Button
+                onClick={nextPage}
+                variant="outline"
+                size="icon"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg border-gray-300"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </Button>
+            </>
+          )}
+
+          {/* Products Grid - Always 4 columns */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {currentProducts.map((product, index) => (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="group cursor-pointer"
+              >
+                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:scale-105 border border-gray-100">
+                  <div className="aspect-square overflow-hidden bg-gray-50 relative">
+                    {/* Single Image */}
+                    {product.id !== 2 && product.id !== 6 && product.id !== 11 && product.image && (
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                    ))}
-                    <span className="text-sm text-gray-500 ml-2 font-light">
-                      ({product.rating})
-                    </span>
+                    )}
+                    
+                    {/* Slideshow for Product ID 2 */}
+                    {product.id === 2 && product.images && (
+                      <>
+                        <img
+                          src={product.images[currentSlide2]}
+                          alt={product.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        
+                        {/* Slideshow Badge */}
+                        <div className="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                          Slideshow ({currentSlide2 + 1}/4)
+                        </div>
+                        
+                        {/* Slideshow Navigation - Always Visible */}
+                        <div className="absolute inset-0 flex items-center justify-between p-2">
+                          <Button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              prevSlide();
+                            }}
+                            variant="outline"
+                            size="icon"
+                            className="h-8 w-8 bg-white/90 hover:bg-white shadow-lg border-gray-300"
+                          >
+                            <ChevronLeft className="h-4 w-4" />
+                          </Button>
+                          <Button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              nextSlide();
+                            }}
+                            variant="outline"
+                            size="icon"
+                            className="h-8 w-8 bg-white/90 hover:bg-white shadow-lg border-gray-300"
+                          >
+                            <ChevronRight className="h-4 w-4" />
+                          </Button>
+                        </div>
+                        
+                        {/* Slideshow Indicators - Always Visible */}
+                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+                          {[0, 1, 2, 3].map((i) => (
+                            <div
+                              key={i}
+                              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                currentSlide2 === i
+                                  ? 'bg-white scale-125 shadow-lg'
+                                  : 'bg-white/70'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+
+                    {/* Slideshow for Product ID 6 */}
+                    {product.id === 6 && product.images && (
+                      <>
+                        <img
+                          src={product.images[currentSlide6]}
+                          alt={product.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        
+                        {/* Slideshow Badge */}
+                        <div className="absolute top-2 right-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                          Slideshow ({currentSlide6 + 1}/5)
+                        </div>
+                        
+                        {/* Slideshow Navigation - Always Visible */}
+                        <div className="absolute inset-0 flex items-center justify-between p-2">
+                          <Button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              prevSlide6();
+                            }}
+                            variant="outline"
+                            size="icon"
+                            className="h-8 w-8 bg-white/90 hover:bg-white shadow-lg border-gray-300"
+                          >
+                            <ChevronLeft className="h-4 w-4" />
+                          </Button>
+                          <Button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              nextSlide6();
+                            }}
+                            variant="outline"
+                            size="icon"
+                            className="h-8 w-8 bg-white/90 hover:bg-white shadow-lg border-gray-300"
+                          >
+                            <ChevronRight className="h-4 w-4" />
+                          </Button>
+                        </div>
+                        
+                        {/* Slideshow Indicators - Always Visible */}
+                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+                          {[0, 1, 2, 3, 4].map((i) => (
+                            <div
+                              key={i}
+                              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                currentSlide6 === i
+                                  ? 'bg-white scale-125 shadow-lg'
+                                  : 'bg-white/70'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+
+                    {/* Slideshow for Product ID 11 */}
+                    {product.id === 11 && product.images && (
+                      <>
+                        <img
+                          src={product.images[currentSlide11]}
+                          alt={product.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        
+                        {/* Slideshow Badge */}
+                        <div className="absolute top-2 right-2 bg-purple-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                          Slideshow ({currentSlide11 + 1}/5)
+                        </div>
+                        
+                        {/* Slideshow Navigation - Always Visible */}
+                        <div className="absolute inset-0 flex items-center justify-between p-2">
+                          <Button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              prevSlide11();
+                            }}
+                            variant="outline"
+                            size="icon"
+                            className="h-8 w-8 bg-white/90 hover:bg-white shadow-lg border-gray-300"
+                          >
+                            <ChevronLeft className="h-4 w-4" />
+                          </Button>
+                          <Button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              nextSlide11();
+                            }}
+                            variant="outline"
+                            size="icon"
+                            className="h-8 w-8 bg-white/90 hover:bg-white shadow-lg border-gray-300"
+                          >
+                            <ChevronRight className="h-4 w-4" />
+                          </Button>
+                        </div>
+                        
+                        {/* Slideshow Indicators - Always Visible */}
+                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+                          {[0, 1, 2, 3, 4].map((i) => (
+                            <div
+                              key={i}
+                              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                currentSlide11 === i
+                                  ? 'bg-white scale-125 shadow-lg'
+                                  : 'bg-white/70'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
                   </div>
-                  <p className="text-xl font-bold text-black">
-                    {product.price}
-                  </p>
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+                        {product.brand}
+                      </span>
+                      <span className="text-xs text-gray-500">
+                        {product.model}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-black mb-3 tracking-tight line-clamp-2">
+                      {product.name}
+                    </h3>
+                    <div className="flex items-center mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`h-4 w-4 ${
+                            i < Math.floor(product.rating)
+                              ? 'text-yellow-400 fill-current'
+                              : 'text-gray-300'
+                          }`}
+                        />
+                      ))}
+                      <span className="text-sm text-gray-500 ml-2 font-light">
+                        ({product.rating})
+                      </span>
+                    </div>
+                    <p className="text-xl font-bold text-black">
+                      {product.price}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Page Indicators */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-2 mt-8">
+              {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentPage === i
+                      ? 'bg-black scale-125'
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* No Results Message */}
